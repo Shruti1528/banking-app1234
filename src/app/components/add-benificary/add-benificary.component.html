@@ -1,0 +1,48 @@
+<div class="container">
+    <p class="text-center fs-3" [ngClass]="isbenificary ? 'text-success pb-1' : 'text-danger pb-1'">{{displaymsg}}</p>
+    <form [formGroup]="benificaryForm" (ngSubmit)="benificarySubmit()" class="border p-3 rounded-3">
+        <div class="row">
+            <div class="col text-center p-2 mb-3 bg-light">
+                    <span class="fs-3">Add Benificary</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="Name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="Name" 
+                formControlName="Name">
+                <div class="form-text text-danger" *ngIf="Name.errors?.['required'] 
+                && (Name.touched || Name.dirty)">
+                    Please enter the full name
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="account" class="form-label">Account Number</label>
+                <input type="text" class="form-control" id="account" formControlName="account">
+                <div class="form-text text-danger " *ngIf="account.errors?.['required']
+                && (account.touched || account.dirty)">
+                    Account Number is required
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="caccount" class="form-label">Confirm Account Number</label>
+                <input type="text" class="form-control" id="caccount" formControlName="caccount">
+                <div class="form-text text-danger" [ngStyle]="{'display':repeatpass}">
+                    Repeat Account Number is invalid
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+

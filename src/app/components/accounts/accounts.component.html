@@ -1,0 +1,228 @@
+<div class="container">
+<p class="text-center fs-3" [ngClass] = "isAccountRegistered ? 'text-success pb-1' : 'text-danger pb-1'">
+    {{displayMsg}}</p>
+<form [formGroup]="registerform" (ngSubmit)="registerSubmitted()" 
+class="border p-3 rounded-3">
+    <div class="row g-0">
+        <div class="col text-center p-2 mb-3 bg-light">
+            <span class="fs-3">Register Account</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="FullName" class="form-label">Full Name*</label>
+            <input type="text" class="form-control" id="FullName" 
+            formControlName="FullName">
+            <div class="form-text text-danger" *ngIf="FullName.errors?.['required']
+            && (FullName.touched || FullName.dirty)">
+                Full Name is Required
+            </div>
+        </div>
+        <div class="col">
+            <label for="FathersName" class="form-label">Father's Name*</label>
+            <input type="text" class="form-control" id="FathersName"
+            formControlName="FathersName">
+            <div class="form-text text-danger" *ngIf="FathersName.errors?.['required']
+            && (FathersName.touched || FathersName.dirty)">
+                FathersName Name is Required
+            </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="MobileNumber" class="form-label">Mobile Number*</label>
+            <input type="text" class="form-control" id="MobileNumber"
+            formControlName="MobileNumber">
+            <div class="form-text text-danger" *ngIf="MobileNumber.errors?.['required']
+            && (MobileNumber.touched || MobileNumber.dirty)">
+                Mobile Number is Required
+            </div>
+            
+            <div class="form-text text-danger" *ngIf="MobileNumber.errors?.['maxLength']
+            && (MobileNumber.touched || MobileNumber.dirty)">
+                Mobile Number should have 10 digits
+            </div>
+            <div class="form-text text-danger" *ngIf="MobileNumber.errors?.['minLength']
+            && (MobileNumber.touched || MobileNumber.dirty)">
+                Mobile Number should have 10 digits
+            </div>
+        </div>
+        <div class="col">
+            <label for="EmailId" class="form-label">EmailId*</label>
+            <input type="text" class="form-control" id="EmailId"
+            formControlName="EmailId">
+            <div class="form-text text-danger" *ngIf="EmailId.errors?.['email'] 
+            && (EmailId.touched || EmailId.dirty)">
+                Enter valid Email Id
+            </div>
+            <div class="form-text text-danger" *ngIf="EmailId.errors?.['required'] 
+            && (EmailId.touched || EmailId.dirty)">
+                Enter Email Id
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="Aadhar" class="form-label">Aadhar Number*</label>
+            <input type="text" class="form-control" id="Aadhar"
+            formControlName="Aadhar">
+            <div class="form-text text-danger" *ngIf="Aadhar.errors?.['required']
+            && (Aadhar.touched || Aadhar.dirty)">
+                Aadhar Number is Required
+            </div>
+            
+            <div class="form-text text-danger" *ngIf="Aadhar.errors?.['maxLength']
+            && (Aadhar.touched || Aadhar.dirty)">
+                Aadhar Number should have 12 digits
+            </div>
+            <div class="form-text text-danger" *ngIf="Aadhar.errors?.['minLength']
+            && (Aadhar.touched || Aadhar.dirty)">
+                Aadhar Number should have 12 digits
+            </div>
+        </div>
+        <div class="col">
+            <label for="DOB" class="form-label">Date Of Birth*</label>
+            <input type="text" class="form-control" id="DOB" formControlName="DOB">
+            <div class="form-text text-danger" *ngIf="DOB.errors?.['required']
+            && (DOB.touched || DOB.dirty)">
+                Enter date
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label class="form-label"><strong>-Residental Address</strong></label>
+        </div>
+        <div class="col">
+            <label class="form-label"><strong>-Permanent Address</strong></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="RAddress" class="form-label">a) Address*</label>
+            <input type="text" class="form-control" id="RAddress"
+            formControlName="RAddress">
+            <div class="form-text text-danger" *ngIf="RAddress.errors?.['required']
+            && (RAddress.touched || RAddress.dirty)">
+                Enter Address
+            </div>
+        </div>
+        <div class="col">
+            <label for="PAddress" class="form-label">Address*</label>
+            <input type="text" class="form-control" id="PAddress"
+            formControlName="PAddress">
+            <div class="form-text text-danger" *ngIf="PAddress.errors?.['required']
+            && (PAddress.touched || PAddress.dirty)">
+                Enter Address
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="RState" class="form-label">b) State*</label>
+            <input type="text" class="form-control" id="RState" 
+            formControlName="RState">
+            <div class="form-text text-danger" *ngIf="RState.errors?.['required']
+            && (RState.touched || RState.dirty)">
+                Enter State
+            </div>
+        </div>
+        <div class="col">
+            <label for="PState" class="form-label">State*</label>
+            <input type="text" class="form-control" id="PState"
+            formControlName="PState">
+            <div class="form-text text-danger" *ngIf="PState.errors?.['required']
+            && (PState.touched || PState.dirty)">
+                Enter State
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="RCity" class="form-label">c) City*</label>
+            <input type="text" class="form-control" id="RCity"
+            formControlName="RCity">
+            <div class="form-text text-danger" *ngIf="RCity.errors?.['required']
+            && (RCity.touched || RCity.dirty)">
+                Enter City
+            </div>
+        </div>
+        <div class="col">
+            <label for="PCity" class="form-label">City*</label>
+            <input type="text" class="form-control" id="PCity"
+            formControlName="PCity">
+            <div class="form-text text-danger" *ngIf="PCity.errors?.['required']
+            && (PCity.touched || PCity.dirty)">
+                Enter City
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col">
+            <label for="RPincode" class="form-label">d) Pincode*</label>
+            <input type="text" class="form-control" id="RPincode"
+            formControlName="RPincode">
+            <div class="form-text text-danger" *ngIf="RPincode.errors?.['required']
+            && (RPincode.touched || RPincode.dirty)">
+                Enter Pincode
+            </div>
+        </div>
+        <div class="col">
+            <label for="PPincode" class="form-label">Pincode*</label>
+            <input type="text" class="form-control" id="PPincode"
+            formControlName="PPincode">
+            <div class="form-text text-danger" *ngIf="PPincode.errors?.['required']
+            && (PPincode.touched || PPincode.dirty)">
+                Enter Pincode
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label class="form-label"><strong>-Occupation</strong></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label for="OccupationType" class="form-label">Occupation Type*</label>
+            <input type="text" class="form-control" id="OccupationType"
+            formControlName="OccupationType">
+            <div class="form-text text-danger" *ngIf="OccupationType.errors?.['required']
+            && (OccupationType.touched || OccupationType.dirty)">
+                Enter Occupation Type
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label for="Income" class="form-label">Source Of Income*</label>
+            <input type="text" class="form-control" id="Income"
+            formControlName="Income">
+            <div class="form-text text-danger" *ngIf="Income.errors?.['required']
+            && (Income.touched || Income.dirty)">
+                Enter Source Of Income
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label for="AnnualIncome" class="form-label">Gross Annual Income*</label>
+            <input type="text" class="form-control" id="AnnualIncome"
+            formControlName="AnnualIncome">
+            <div class="form-text text-danger" *ngIf="AnnualIncome.errors?.['required']
+            && (AnnualIncome.touched || AnnualIncome.dirty)">
+                Enter Gross Annual Income
+            </div>
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+</div>

@@ -1,0 +1,37 @@
+<div class="container mt-5 bg-light border">
+    <form [formGroup]="transactionForm" (ngSubmit)="transactionSubmit()" >
+    <div class="row">
+        <div class="col text-center text-primary p-2 mb-3 bg-light">
+                <span class="fs-3">Transaction</span>
+        </div>
+    </div>
+    <select class="form-select mb-3" aria-label="Default select example" formControlName="transactionType">
+        <option selected>Select Transaction type</option>
+        <option value="RTGS">RTGS</option>
+        <option value="NEFT">NEFT</option>
+        <option value="IMPS">IMPS</option>
+      </select>
+    <div class="mb-3">
+    <label for="fromAccount" class="form-label">From Account</label>
+    <input type="text" class="form-control" id="fromAccount" formControlName="fromAccount" placeholder="Enter Your Account Number">
+    </div>
+    <div class="mb-3">
+    <label for="toAccount" class="form-label">To Account</label>
+    <input type="text" class="form-control" id="toAccount" formControlName="toAccount" placeholder="Enter Benificary Account Number">
+    </div>
+    <div class="mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input type="text" class="form-control" id="amount" formControlName="amount" placeholder="Enter Amount">
+    </div>
+        
+        <div class="mb-3">
+            <label for="remark" class="form-label">Remark</label>
+            <input type="text" class="form-control" id="remark" formControlName="remark" placeholder="Add A Remark">
+        </div>
+        <div class="col-3 offset-4">
+            <div class="d-grid">
+                <button type="submit" class="btn btn-outline-primary">Continue</button>
+            </div>
+        </div>
+    </form>
+</div>
