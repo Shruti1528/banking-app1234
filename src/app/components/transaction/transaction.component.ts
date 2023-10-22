@@ -30,6 +30,17 @@ export class TransactionComponent implements OnInit{
   transactionSubmit() {
     // Handle form submission here
     if (this.transactionForm.valid) {
+      const transactionData = {
+         
+        fromAccount : this.transactionForm.value.fromAccount,
+        ToAccount : this.transactionForm.value.toAccount,
+        Amount : this.transactionForm.value.amount,
+        TransactionDate : this.currentdate,
+        Remark : this.transactionForm.value.remark,
+        Mode : this.transactionForm.value.transactionType,
+      }
+
+
     
       this.auth.payment([
         this.transactionForm.value.transactionType,
