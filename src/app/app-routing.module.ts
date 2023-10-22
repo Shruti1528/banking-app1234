@@ -28,43 +28,43 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [authGuard]
+    // canActivate: [authGuard]
   },
   {
     path: 'header',
     component: HeaderComponent,
-    canActivate: [authGuard]
+    // canActivate: [authGuard]
   },
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [authGuard]
+    // canActivate: [authGuard]
   },
   {
     path: 'user',
     component: UserDetailsComponent,
-    canActivate: [authGuard]
+    // canActivate: [authGuard]
   },
   {
     path: 'updatepassword',
     component: UpdatePasswordComponent,
-    canActivate: [authGuard]
+    // canActivate: [authGuard]
   },
   {
     path: 'addbenificary',
     component: AddBenificaryComponent,
-    canActivate: [authGuard]
+    // canActivate: [authGuard]
   },
   {
     path: 'transaction',
     component: TransactionComponent,
-    canActivate: [authGuard]
+    // canActivate: [authGuard]
   },
   {
     path: 'getpayment',

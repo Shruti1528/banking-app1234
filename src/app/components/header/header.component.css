@@ -49,3 +49,13 @@ body, h1, h2, p, ul, li {
     background-color: #2980b9;
   }
   
+  .btn-color
+  {
+
+    color: #fff; 
+  }
+  .position
+  {
+    position: relative;
+    margin-left: -100px;
+  }

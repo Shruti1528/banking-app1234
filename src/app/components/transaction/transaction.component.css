@@ -35,6 +35,12 @@ body {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    background-image: url("https://images.ctfassets.net/40w0m41bmydz/6y5vRpCj9feXQjCZVyzRRn/0c4f471b718c2caa856a32829e5df715/CDT-1375_Blog_Image_Hero.jpg?w=1980&h=834&fl=progressive&q=50&fm=jpg"); /* Specify the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
 }
 
 /* Offset Styles */
@@ -57,4 +63,13 @@ body {
     100% {
         transform: scale(1);
     }
+}
+.image-container
+{
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://t4.ftcdn.net/jpg/03/88/65/45/360_F_388654597_RJ46YzwmSQ8Jabg3ARtCJ4rkAKBzmvo3.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

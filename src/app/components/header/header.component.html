@@ -1,14 +1,16 @@
 <header>
     <div class="container">
+      <div class="position"><button class="btn btn-color btn-outline-info" (click)="back()">Back</button></div>
       <div class="logo">
-        <h1>Native Bank of India</h1>
+        <h1>Native Bank of India </h1>
       </div>
       <nav>
         <ul>
           <li><a routerLink="/">Home</a></li>
           <li><a routerLink="/login">Login</a></li>
           <li><a routerLink="/register">Register</a></li>
-          <li><a routerLink="/internet-banking">Internet Banking</a></li>
+          <li><a routerLink="/internetBanking">Internet Banking</a></li>
+          <li ><a (click)="logout()" routerLink="/login">Logout</a></li>
         </ul>
       </nav>
     </div>

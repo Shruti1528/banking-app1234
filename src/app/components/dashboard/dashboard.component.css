@@ -58,3 +58,13 @@ body {
         transform: scale(1);
     }
 }
+
+.container-fluid
+{
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://images.ctfassets.net/40w0m41bmydz/6y5vRpCj9feXQjCZVyzRRn/0c4f471b718c2caa856a32829e5df715/CDT-1375_Blog_Image_Hero.jpg?w=1980&h=834&fl=progressive&q=50&fm=jpg"); /* Specify the path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
