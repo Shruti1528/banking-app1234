@@ -49,17 +49,17 @@ const routes: Routes = [
   {
     path: 'user',
     component: UserDetailsComponent,
-     canActivate: [authGuard]
+    canActivate: [authGuard]
   },
   {
     path: 'updatepassword',
     component: UpdatePasswordComponent,
-     canActivate: [authGuard]
+    canActivate: [authGuard]
   },
   {
     path: 'addbenificary',
     component: AddBenificaryComponent,
-     canActivate: [authGuard]
+    canActivate: [authGuard]
   },
   {
     path: 'transaction',
