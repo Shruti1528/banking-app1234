@@ -34,12 +34,12 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    // canActivate: [authGuard]
+    canActivate: [authGuard]
   },
   {
     path: 'header',
     component: HeaderComponent,
-    // canActivate: [authGuard]
+    canActivate: [authGuard]
   },
   {
     path: 'home',
@@ -49,22 +49,22 @@ const routes: Routes = [
   {
     path: 'user',
     component: UserDetailsComponent,
-    // canActivate: [authGuard]
+     canActivate: [authGuard]
   },
   {
     path: 'updatepassword',
     component: UpdatePasswordComponent,
-    // canActivate: [authGuard]
+     canActivate: [authGuard]
   },
   {
     path: 'addbenificary',
     component: AddBenificaryComponent,
-    // canActivate: [authGuard]
+     canActivate: [authGuard]
   },
   {
     path: 'transaction',
     component: TransactionComponent,
-    // canActivate: [authGuard]
+    canActivate: [authGuard]
   },
   {
     path: 'getpayment',
