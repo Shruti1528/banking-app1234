@@ -126,6 +126,6 @@ export class AuthService {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ${token}'
     });
-    return this.http.get<any[]>(this.baseUrl + "Register/RegisterAccount", {responseType: 'json', })
+    return this.http.get<any[]>(this.baseUrl + "Register/RegisterAccountRegister/GetTransaction", {responseType: 'json', })
   }
 }

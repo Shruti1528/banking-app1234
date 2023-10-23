@@ -53,6 +53,7 @@ export class TransactionComponent implements OnInit{
         {
           if(res == 'Success'){
             this.displayMsg = "Money Transfer Successfully";
+            alert("Money Transfer Successfully");
             this.paymentSuccess = true;
           }
           else{
