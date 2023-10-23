@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -120,5 +120,12 @@ export class AuthService {
 
   getPayments(userAccount: any){
     return this.http.get(this.baseUrl + "Register/GetTransaction/" + userAccount, {responseType: 'json',})
+  }
+  getMyTransactions() : Observable<any> {
+    const token = localStorage.getItem("access_token");
+    const headers = new HttpHeaders({
+      'Authorization': 'Bearer ${token}'
+    });
+    return this.http.get<any[]>(this.baseUrl + "Register/RegisterAccount", {responseType: 'json', })
   }
 }

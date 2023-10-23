@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { GlobaldataService } from 'src/app/services/globaldata.service';
 
 @Component({
@@ -7,12 +8,15 @@ import { GlobaldataService } from 'src/app/services/globaldata.service';
   styleUrls: ['./transaction-payment.component.css']
 })
 export class TransactionPaymentComponent implements OnInit{
-  userpayment: any;
+  transactions: any[]= [];
   
-  constructor(private data: GlobaldataService){
-    this.userpayment = data.UserPayment;
+  constructor(private authService: AuthService){
+  
   }
   ngOnInit(): void{
+    this.authService.getMyTransactions().subscribe((transactions) => {
+      this.transactions = transactions;
+    });
 
   }
 
