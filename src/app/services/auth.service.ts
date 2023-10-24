@@ -58,25 +58,25 @@ export class AuthService {
   }
 
   AddUser(loginInfo: Array<any>){
-    return this.http.post(this.baseUrl + "Register/AddBenificary", {
+    return this.http.post(this.baseUrl + "Dashboard/SaveBeneficiary", {
       name: loginInfo[0],
       accountNumber: loginInfo[1],
     }, {responseType:'text',})
   }
 
   payment(user: Array<any>){
-    return this.http.post(this.baseUrl + "Register/Transaction", {
-      transactionType: user[0],
-      fromAccount: user[1],
-      toAccount: user[2],
-      amount: user[3],
-      transactionDate: user[4],
-      remark: user[5],
+    return this.http.post(this.baseUrl + "Dashboard/Transaction", {
+      payeeAccount: user[0],
+      payerAccount: user[1],
+      amount: user[2],
+      tDate: user[3],
+      remark: user[4],
+      mode: user[5]
     }, {responseType:'text',})
   }
 
   changePassword(user: Array<any>){
-    return this.http.post(this.baseUrl + "Register/changepassword", {
+    return this.http.post(this.baseUrl + "Dashboard/changepassword", {
       oldPassword: user[0],
       newPassword: user[1],
       email:user[2],
@@ -111,21 +111,21 @@ export class AuthService {
   }
 
   getAccountDetails(userEmail: any){
-    return this.http.get(this.baseUrl + "Register/GetAccount/" + userEmail, {responseType:'json',})
+    return this.http.get(this.baseUrl + "Dashboard/GetUserDetails" , {responseType:'json',})
   }
 
-  getInterBank(userEmail: any){
-    return this.http.get(this.baseUrl + "Register/GetInternetBanking/" + userEmail, {responseType: 'json',})
-  }
+   getInterBank(userEmail: any){
+     return this.http.get(this.baseUrl + "Register/GetInternetBanking/" + userEmail, {responseType: 'json',})
+   }
 
   getPayments(userAccount: any){
-    return this.http.get(this.baseUrl + "Register/GetTransaction/" + userAccount, {responseType: 'json',})
-  }
+     return this.http.get(this.baseUrl + "Register/GetMyTransactions/" , {responseType: 'json',})
+   }
   getMyTransactions() : Observable<any> {
     const token = localStorage.getItem("access_token");
     const headers = new HttpHeaders({
       'Authorization': 'Bearer ${token}'
     });
-    return this.http.get<any[]>(this.baseUrl + "Register/RegisterAccountRegister/GetTransaction", {responseType: 'json', })
+    return this.http.get<any[]>(this.baseUrl + "Dashboard/GetMyTransactions" , {responseType: 'json',})
   }
 }
