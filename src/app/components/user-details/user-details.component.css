@@ -23,8 +23,9 @@ h1
     width: 1000px; /* Adjust the width to your desired value */
     padding: 20px;
     border: 1px solid #ccc;
-    background-color: #b7bdc0;
+    background-color: black;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-left: 220px;
+    color: white;
     
 }

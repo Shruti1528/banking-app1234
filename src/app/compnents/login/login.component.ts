@@ -36,30 +36,15 @@ export class LoginComponent implements OnInit{
         alert('Login Fail');
         this.islogin = false;
       }
-      else if(this.loginAuth.isloggedIn()){
-        alert('Already logged In');
-      }
+      
       else{
         this.loginAuth.setToken(res); 
         this.islogin= true;
-        if(this.loginForm.value.email){
-          localStorage.setItem('LoginEmail', this.loginForm.value.email);
-        }
-        // this is function to get User details and set account to local storage 
-        this.loginAuth.getInterBank([localStorage.getItem('LoginEmail')]).subscribe(res => 
-          {
-            if(res != null){
-             this.userdetails = res;
-             localStorage.setItem("UserAccount",this.userdetails.accountNumber);
-            }
-            else{
-              console.log("failed");
-            }
-          })
+        this.router.navigate(['/dashboard'])
         
-        this.router.navigateByUrl('dashboard');
-      }
-    })
+        }
+      })
+        // this is function to get User details and set account to local storage 
   }
 
 

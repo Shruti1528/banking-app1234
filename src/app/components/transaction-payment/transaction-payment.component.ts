@@ -16,6 +16,7 @@ export class TransactionPaymentComponent implements OnInit{
   ngOnInit(): void{
     this.authService.getMyTransactions().subscribe((transactions) => {
       this.transactions = transactions;
+      console.log(this.transactions,"ss");
     });
 
   }

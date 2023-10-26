@@ -24,22 +24,23 @@ export class DashboardComponent implements OnInit{
   }
 
   btnClick(){
-    this.auth.getAccountDetails([localStorage.getItem('LoginEmail')]).subscribe(res => 
-      {
-        if(res != null){
-         this.userdetails = res;
-         this.router.navigateByUrl('user');
-         this.data.UserData = this.userdetails;
-        }
-        else{
-          console.log("failed");
-        }
-      });
+    this.router.navigateByUrl('user');
+    // this.auth.getAccountDetails([localStorage.getItem('LoginEmail')]).subscribe(res => 
+    //   {
+    //     if(res != null){
+    //      this.userdetails = res;
+         
+    //      this.data.UserData = this.userdetails;
+    //     }
+    //     else{
+    //       console.log("failed");
+    //     }
+    //   });
       
   }
 
   btnpayment(){
-    this.auth.getPayments([localStorage.getItem('UserAccount')]).subscribe(resp =>{
+    this.auth.getMyTransactions().subscribe(resp =>{
       if(resp != null){
         this.userpayment = resp;
         this.router.navigateByUrl('getpayment');

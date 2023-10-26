@@ -1,2 +1,41 @@
 <app-header></app-header>
-<p>{{transactions}}</p>
+<div class="background">
+<div class="container text-white">
+    <div class="row">
+      <div class="col ">
+        <h2 class="mt-0">My Transactions</h2>
+      </div>
+    </div>
+    <div class="row ">
+      <div class="col">
+        <table class="table text-white">
+          <thead>
+            <tr>
+              <th>Transaction ID</th>
+              <th>Payee Account</th>
+              <th>Payer Account</th>
+              <th>Amount</th>
+              <th>Transaction Date</th>
+              <th>Remark</th>
+              <th>Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let transaction of transactions">
+              <td>{{ transaction.transactionId }}</td>
+              <td>{{ transaction.payeeAccount }}</td>
+              <td>{{ transaction.payerAccount }}</td>
+              <td>{{ transaction.amount }}</td>
+              <td>{{ transaction.tDate | date:'medium' }}</td>
+              <td>{{ transaction.remark }}</td>
+              <td>{{ transaction.mode }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+   
+    </div>
+      
+  </div>
+</div>
+

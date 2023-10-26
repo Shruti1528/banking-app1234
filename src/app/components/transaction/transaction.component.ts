@@ -51,21 +51,19 @@ export class TransactionComponent implements OnInit{
         this.transactionForm.value.remark
       ]).subscribe(res => 
         {
-          if(res == 'Success'){
+          
+          if (res == 'Transaction successful.') {
             this.displayMsg = "Money Transfer Successfully";
-            alert("Money Transfer Successfully");
+            alert('Money Transfer Successfully');
             this.paymentSuccess = true;
-          }
-          else{
+          } else {
             this.displayMsg = "Please try After Sometime";
-            
           }
-        })
-        console.log(this.transactionForm.value.transactionType);
-    } else {
-      console.log('Form is invalid');
+        });
+      } else {
+        console.log('Form is invalid');
+      }
     }
-  }
 
   get transactionType(): FormControl{
     return this.transactionForm.get("transactionType") as FormControl;

@@ -12,6 +12,7 @@ import { UpdatePasswordComponent } from './components/update-password/update-pas
 import { AddBenificaryComponent } from './components/add-benificary/add-benificary.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { TransactionPaymentComponent } from './components/transaction-payment/transaction-payment.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,7 @@ const routes: Routes = [
     component: HeaderComponent,
     canActivate: [authGuard]
   },
+
   {
     path: 'home',
     component: HomeComponent,
@@ -69,6 +71,10 @@ const routes: Routes = [
   {
     path: 'getpayment',
     component: TransactionPaymentComponent
+  },
+  {
+    path :'page-not-found',
+    component: PageNotFoundComponent
   }
 ];
 
