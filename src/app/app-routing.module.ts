@@ -13,6 +13,9 @@ import { AddBenificaryComponent } from './components/add-benificary/add-benifica
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { TransactionPaymentComponent } from './components/transaction-payment/transaction-payment.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+
 
 const routes: Routes = [
   {
@@ -40,7 +43,7 @@ const routes: Routes = [
   {
     path: 'header',
     component: HeaderComponent,
-    canActivate: [authGuard]
+    //canActivate: [authGuard]
   },
 
   {
@@ -75,8 +78,17 @@ const routes: Routes = [
   {
     path :'page-not-found',
     component: PageNotFoundComponent
+  },
+  {
+    path: 'forgot-password', 
+    component: ForgotPasswordComponent
+  },
+  {
+    path: 'resetpassword', 
+    component: ResetPasswordComponent
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

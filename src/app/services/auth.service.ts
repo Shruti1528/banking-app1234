@@ -52,9 +52,7 @@ export class AuthService {
       Password: loginInfo[1],
     }, { responseType: 'text', })
   }
-  /*forgotPassword(model: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}Register/forgotpassword`, { model}, { responseType: 'text' });
-  }*/
+  
   forgotPassword(user: any): Observable<string> {
     return this.http.post(this.baseUrl + "Register/forgotpassword", {
       UserId: user.UserId

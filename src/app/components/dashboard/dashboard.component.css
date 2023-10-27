@@ -6,7 +6,7 @@ body {
 
 /* Button Styles */
 .btn-primary {
-    background-color: rgb(240, 204, 240);
+    background: linear-gradient(45deg, rgb(106, 211, 240), rgb(239, 115, 158));
     color: #050101;
     border: none;
     border-radius: 5px;

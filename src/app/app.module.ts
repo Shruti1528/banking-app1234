@@ -18,6 +18,8 @@ import { AddBenificaryComponent } from './components/add-benificary/add-benifica
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { TransactionPaymentComponent } from './components/transaction-payment/transaction-payment.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     TransactionComponent,
     TransactionPaymentComponent,
     PageNotFoundComponent,
+    ResetPasswordComponent,
+    ForgotPasswordComponent,
+    
   ],
   imports: [
     BrowserModule,
