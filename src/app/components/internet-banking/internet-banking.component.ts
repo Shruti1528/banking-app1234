@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class InternetBankingComponent implements OnInit{
   repeatpass: string = 'none';
   displaymsg: string = '';
   isInternetCreated: boolean = false;
-  constructor(private authService: AuthService){
+  constructor(private authService: AuthService,private router: Router){
 
   }
   ngOnInit(): void {
@@ -22,6 +23,7 @@ export class InternetBankingComponent implements OnInit{
     Email: new FormControl("", [Validators.email, Validators.required]),
     pwd: new FormControl("", [Validators.minLength(6), Validators.maxLength(10), Validators.required]),
     cpwd: new FormControl(''),
+    otp: new FormControl("",[Validators.minLength(6), Validators.required]),
   });
 
   internetSubmit(){
@@ -32,18 +34,22 @@ export class InternetBankingComponent implements OnInit{
       this.authService.registerInternetBanking([
         this.internetBankingForm.value.AccountNumber,
         this.internetBankingForm.value.Email,
-        this.internetBankingForm.value.pwd
+        this.internetBankingForm.value.pwd,
+        this.internetBankingForm.value.otp
       ]).subscribe(res=> {
         if(res == 'Success'){
           this.displaymsg = 'Registered for Internet Banking';
           this.isInternetCreated = true;
+          this.router.navigate(['/login']);
         }
         else if(res == 'Email not matched'){
           this.displaymsg = 'Email not found in database';
+          alert('Email not found in database');
           this.isInternetCreated = false;
         }
         else{
           this.displaymsg = 'Something went wrong';
+          alert('Something went wrong');
           this.isInternetCreated = false;
         }
       })
@@ -63,6 +69,9 @@ export class InternetBankingComponent implements OnInit{
   }
   get cpwd(): FormControl{
     return this.internetBankingForm.get("cpwd") as FormControl;
+  }
+  get otp(): FormControl{
+    return this.internetBankingForm.get("otp")  as FormControl;
   }
 }
 

@@ -17,9 +17,9 @@ import { UpdatePasswordComponent } from './components/update-password/update-pas
 import { AddBenificaryComponent } from './components/add-benificary/add-benificary.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { TransactionPaymentComponent } from './components/transaction-payment/transaction-payment.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [

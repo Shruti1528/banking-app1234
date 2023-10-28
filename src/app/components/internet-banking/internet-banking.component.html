@@ -2,7 +2,7 @@
 <div class="image-container pt-3">
     <div class="container pt-0">
         <p class="text-center fs-3" [ngClass]="isInternetCreated ? 'text-success pb-1' : 'text-danger pb-1'">{{displaymsg}}</p>
-        <form [formGroup]="internetBankingForm" (ngSubmit)="internetSubmit()" class="p-4 rounded-3 ">
+        <form [formGroup]="internetBankingForm" (ngSubmit)="internetSubmit()" class="p-2 rounded-3 ">
             <div class="row">
                 <div class="col text-center p-2 mb-1 ">
                         <span class="fs-3">Internet Banking</span>
@@ -58,9 +58,18 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col">
+                    <label for="otp" class="form-label">OTP</label>
+                    <input type="text" class="form-control" id="otp" formControlName="otp">
+                    <div class="form-text text-danger" [ngStyle]="{'display':otp}">
+                        OTP is required
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-6 offset-3">
                     <div class="d-grid">
-                        <button type="submit" [disabled]="internetBankingForm.invalid" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
                 <div class="row">
