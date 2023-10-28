@@ -34,7 +34,9 @@ h1 {
     background-repeat: no-repeat;
     background-position: 0 100%;
     transition: background-size 0.3s;
-    font-size: 75px;
+    font-size: 85px;
+    font-style: italic;
+    
 }
 
 h1:hover {

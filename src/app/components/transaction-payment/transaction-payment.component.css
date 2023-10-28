@@ -1,15 +1,17 @@
 
 .container {
     max-width: 1200px;
+    
     margin: 0 auto;
     padding: 20px;
-    background-color: rgba(2, 22, 45, 0.7); /* Semi-transparent black background for the container */
+    background-color: rgba(3, 2, 45, 0.7); /* Semi-transparent black background for the container */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     color: white;
    
   }
   .table {
+    margin-top: 10px;
     margin-bottom: 20px;
     border: none;
     border-radius: 8px;
@@ -20,8 +22,8 @@
   }
   .background{
     width: 100%;
-    height: 100%;
-    background-image: url("src\assets\historyimage.jpg"); /* Specify the path to your image */
+    height: 750px;
+    background-image: url("https://paytm.com/blog/wp-content/uploads/2021/11/12_-5-steps-to-check-Paytm-wallet-transaction-history.jpg"); /* Specify the path to your image */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
